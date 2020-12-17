@@ -140,7 +140,7 @@ flatcar:
         Type=oneshot
         ExecStart=/bin/mkdir -p /mnt/data/teamcity-server/data/plugins
         ExecStart=/bin/bash /etc/teamcity/download-file.sh \
-          https://raw.githubusercontent.com/JetBrains/teamcity-azure-template/master/azure-plugins.txt \
+          https://raw.githubusercontent.com/roeman/teamcity-azure-template/master/azure-plugins.txt \
           /mnt/data/teamcity-server/data/plugins/azure-plugins.txt
         ExecStart=/bin/bash -c 'cd /mnt/data/teamcity-server/data/plugins && curl -K azure-plugins.txt'
 

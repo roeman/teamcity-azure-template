@@ -11,7 +11,7 @@ write_files:
           VERSION=$(cat /etc/teamcity/tags | sed -n 's/.*teamcity-version\:\([^;]\+\).*/\1/p')
           if [[ ! -z "$VERSION" ]]; then
             TEAMCITY_VERSION="TEAMCITY_VERSION=$VERSION"
-            CURRENT_VERSION=$(at /etc/teamcity/version)
+            CURRENT_VERSION=$(cat /etc/teamcity/version)
             if [ "$TEAMCITY_VERSION" != "$CURRENT_VERSION" ]; then
                 echo "TeamCity version has changed to $VERSION"
                 echo "$TEAMCITY_VERSION" > /etc/teamcity/version
